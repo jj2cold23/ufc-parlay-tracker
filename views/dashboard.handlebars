@@ -1,0 +1,23 @@
+<h1>Your UFC Parlays</h1>
+
+<ul>
+  {{#each parlays}}
+    <li>
+      <strong>{{name}}</strong>: {{picks}}
+      <form action="/parlay/delete/{{id}}" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+
+<h2>Add New Parlay</h2>
+<form action="/parlay" method="POST">
+  <input name="name" placeholder="Parlay Name" required>
+  <textarea name="picks" placeholder="Example: Jon Jones -250, Gaethje +150" required></textarea>
+  <button type="submit">Save Parlay</button>
+</form>
+
+<form action="/logout" method="POST">
+  <button type="submit">Logout</button>
+</form>

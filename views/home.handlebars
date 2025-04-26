@@ -1,0 +1,10 @@
+<h1>Welcome to UFC Parlay Tracker</h1>
+
+{{#if logged_in}}
+  <a href="/dashboard">Go to Dashboard</a>
+  <form action="/logout" method="POST">
+    <button type="submit">Logout</button>
+  </form>
+{{else}}
+  <a href="/login">Login or Register</a>
+{{/if}}
